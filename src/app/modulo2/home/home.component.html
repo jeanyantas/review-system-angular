@@ -2,26 +2,27 @@
     <div class="demo-content">
 
         <div class="container main">
-            <h1 class="text-center pt-3">REGISTRA TU LIBRO FAVORITO</h1>
+            <h3 class="text-center pt-3">REGISTRA TU LIBRO FAVORITO</h3>
             <div class="row">
                 <div class="col-md-8 mx-auto">
                     <form action="" class="form-control m-3 p-3 bg-light">
                         <div class="row">
                             <div class="col-4">
                                 <div class="form-floating mb-3">
-                                    <input type="text" name="dniUsuarioInput" #dniUsuarioInput class="form-control" placeholder="..." required minlength="8" maxlength="8" pattern="[0-9]{8}">
+                                    <!-- [(ngModel)]="selectedResenia.dniUsuario" -->
+                                    <input type="text" name="dniUsuarioInput" #dniUsuarioInput class="form-control" placeholder="..." minlength="8" maxlength="8" pattern="[0-9]{8}">
                                     <label for="dniUsuarioInput">DNI del Usuario</label>
                                 </div>
                             </div>
                             <div class="col-4">
                                 <div class="form-floating mb-3">
-                                    <input type="text" name="nombreUsuarioInput" #nombreUsuarioInput class="form-control" placeholder="..." required maxlength="30" pattern="[A-Za-z ]{30}">
+                                    <input type="text" name="nombreUsuarioInput" #nombreUsuarioInput class="form-control" placeholder="..." maxlength="30" pattern="[A-Za-z ]{30}">
                                     <label for="nombreUsuarioInput">Nombres del Usuario</label>
                                 </div>
                             </div>
                             <div class="col-4">
                                 <div class="form-floating mb-3">
-                                    <input type="text" name="apellidosUsuarioInput" #apellidosUsuarioInput class="form-control" placeholder="..." required maxlength="50" pattern="[A-Za-z ]{50}">
+                                    <input type="text" name="apellidosUsuarioInput" #apellidosUsuarioInput class="form-control" placeholder="..." maxlength="50" pattern="[A-Za-z ]{50}">
                                     <label for="apellidosUsuarioInput">Apellidos del Usuario</label>
                                 </div>
                             </div>
@@ -29,7 +30,8 @@
                         <div class="row">
                             <div class="col-6">
                                 <div class="form-floating mb-3">
-                                    <input type="email" name="correoUsuarioInput" class="form-control" #correoUsuarioInput placeholder="..." value="jean.yantas@gmail.com">
+                                    <input type="email" name="correoUsuarioInput" class="form-control" #correoUsuarioInput placeholder="..." value="jean.yantas@gmail.com"
+                                    pattern="[A-Za-z.-_]+[@]{1}[A-Za-z]+[.]{1}[com]{3}">
                                     <label for="correoUsuarioInput">Correo del Usuario</label>
                                 </div>
                             </div>
@@ -47,28 +49,28 @@
                         <div class="row">
                             <div class="col-4">
                                 <div class="form-floating mb-3">
-                                    <input type="text" name="nombreLibroInput" #nombreLibroInput class="form-control" placeholder="..." required>
+                                    <input type="text" name="nombreLibroInput" #nombreLibroInput class="form-control" placeholder="...">
                                     <label for="nombreLibroInput">Nombre del Libro</label>
                                 </div>
                             </div>
                             <div class="col-4">
                                 <div class="form-floating mb-3">
-                                    <input type="text" name="autorLibroInput" #autorLibroInput class="form-control" placeholder="..." required>
+                                    <input type="text" name="autorLibroInput" #autorLibroInput class="form-control" placeholder="...">
                                     <label for="autorLibroInput">Autor del Libro</label>
                                 </div>
                             </div>
                             <div class="col-4">
                                 <div class="form-floating mb-3">
-                                    <input type="number" name="puntuacionLibroInput" #puntuacionLibroInput class="form-control" placeholder="..." required min="1" max="10">
-                                    <label for="puntuacionLibroInput">Puntuaci&oacute;n del Libro (1-10)</label>
+                                    <input type="number" name="puntuacionLibroInput" #puntuacionLibroInput class="form-control" placeholder="..." pattern="[1-9]{1}">
+                                    <label for="puntuacionLibroInput">Puntuaci&oacute;n del Libro (1-9)</label>
                                 </div>
                             </div>
                         </div>
                         <div class="form-floating mb-3">
-                            <textarea class="form-control" placeholder="..." name="comentarioInput" #comentarioInput style="height: 200px" required maxlength="1000"></textarea>
+                            <textarea class="form-control" placeholder="..." name="comentarioInput" #comentarioInput style="height: 150px" maxlength="1000"></textarea>
                             <label for="comentarioInput">Comentario</label>
                         </div>
-                        <div class="d-flex justify-content-center mb-3">
+                        <div class="d-flex justify-content-center">
                             <button (click)="enviar(dniUsuarioInput, nombreUsuarioInput, apellidosUsuarioInput, correoUsuarioInput, generoInput, nombreLibroInput, autorLibroInput, puntuacionLibroInput, comentarioInput)" class="btn btn-info" type="submit" data-bs-toggle="modal" data-bs-target="#tablaHome">Agregar Reseña</button>
                         </div>
                     </form>
@@ -119,8 +121,8 @@
                                             Normal.
                                         </td>
                                     </ng-template>
-                                    <td><button class="btn btn-success btn-sm">Editar</button></td>
-                                    <td><button class="btn btn-danger btn-sm">Eliminar</button></td>
+                                    <td><button (click)="editar(resenia)" class="btn btn-success btn-sm">Editar</button></td>
+                                    <td><button (click)="eliminar(resenia)" class="btn btn-danger btn-sm">Eliminar</button></td>
                                 </tr>
                                 </tbody>
                             </table>

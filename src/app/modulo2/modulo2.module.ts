@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home/home.component';
 
+import { FormsModule } from '@angular/forms'; // IMPORTAR FORMULARIO TEMPLATE
+
 
 
 @NgModule({
@@ -9,7 +11,8 @@ import { HomeComponent } from './home/home.component';
     HomeComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule // IMPORTAR FORMULARIO TEMPLATE
   ],
   exports:[HomeComponent] // EXPORTAR EL COMPONENTE HOME DEL MODULO2
 })

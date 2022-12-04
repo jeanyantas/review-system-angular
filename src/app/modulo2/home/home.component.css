@@ -9,7 +9,7 @@
     left: 0;
     top: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh; /* Que tome la altura total de la pantalla */
     opacity: 0.3;
     background-image: url(librosFondo.jpg);
     background-repeat: no-repeat;
