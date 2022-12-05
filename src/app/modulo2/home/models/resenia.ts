@@ -7,6 +7,6 @@ export class Resenia {
     genero: string = '';
     libro: string = '';
     autor: string = '';
-    puntuacion: number = 0;
+    puntuacion!: number;
     comentario: string = '';
 }

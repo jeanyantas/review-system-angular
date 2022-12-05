@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home/home.component';
 
-import { FormsModule } from '@angular/forms'; // IMPORTAR FORMULARIO TEMPLATE
+import { ReactiveFormsModule } from '@angular/forms'; // Importar Formularios Reactivos
 
 
 
@@ -12,7 +12,7 @@ import { FormsModule } from '@angular/forms'; // IMPORTAR FORMULARIO TEMPLATE
   ],
   imports: [
     CommonModule,
-    FormsModule // IMPORTAR FORMULARIO TEMPLATE
+    ReactiveFormsModule // Importar Formulario Reactivo
   ],
   exports:[HomeComponent] // EXPORTAR EL COMPONENTE HOME DEL MODULO2
 })
