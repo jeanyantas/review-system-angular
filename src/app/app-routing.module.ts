@@ -4,16 +4,16 @@ import { HomeComponent } from './modulo2/home/home.component';
 import { ContactoComponent } from './modulo3/contacto/contacto.component';
 import { UsuariosComponent } from './modulo4/usuarios/usuarios.component';
 
-// CONFIGURACION PARA RUTAS DEL NAVBAR
+// Configuración de las rutas para la barra de navegación
 const routes: Routes = [
   {path:'home',component:HomeComponent},
   {path:'contacto',component:ContactoComponent},
   {path:'usuarios',component:UsuariosComponent}
 ];
-// FIN CONFIGURACION
+// Fin
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)], // ROUTING
+  imports: [RouterModule.forRoot(routes)], // Agregar
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

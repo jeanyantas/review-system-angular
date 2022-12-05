@@ -35,7 +35,7 @@ nav ul li a{
 }
 li a.active, li a:hover{
     background: #000090;
-    transition: .5s;
+    transition: .9s;
     border-radius: 50px;
 }
 .checkbtn{
